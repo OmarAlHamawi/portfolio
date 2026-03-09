@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { SKILLS } from '../data';
 
 const Skills = () => (
@@ -6,7 +7,13 @@ const Skills = () => (
       <div className="grid md:grid-cols-3 gap-12">
         
         {/* Left Column: Skills Grid */}
-        <div className="md:col-span-2">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="md:col-span-2"
+        >
           <h3 className="text-2xl font-bold text-white mb-8"><span className="text-gold-500">01.</span> Technical Arsenal</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {SKILLS.map((skill, idx) => (
@@ -15,11 +22,16 @@ const Skills = () => (
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column: Oracle Badge */}
-        {/* ADDED: flex flex-col justify-center items-center to perfectly center the content */}
-        <div className="bg-dark-900 p-8 rounded border border-gold-500/20 text-center relative overflow-hidden group flex flex-col justify-center items-center">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-dark-900 p-8 rounded border border-gold-500/20 text-center relative overflow-hidden group flex flex-col justify-center items-center"
+        >
           <div className="absolute top-0 right-0 bg-gold-500 text-dark-900 text-xs font-bold px-3 py-1 z-10">VERIFIED</div>
           
           <img src="/oracle-badge.png" alt="Oracle Certified" className="w-32 h-32 mx-auto mb-6 drop-shadow-xl relative z-10" />
@@ -27,9 +39,8 @@ const Skills = () => (
           <p className="text-gold-500 text-sm mb-4 relative z-10">Java SE 17 Developer</p>
           <p className="text-gray-500 text-xs relative z-10">Issued Jan 2026 • Credential ID: 102855931OCPJSE17</p>
           
-          {/* Optional: A subtle gold glow effect in the background of the card */}
           <div className="absolute inset-0 bg-gradient-to-b from-gold-500/5 to-transparent opacity-50"></div>
-        </div>
+        </motion.div>
         
       </div>
     </div>
