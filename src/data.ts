@@ -193,3 +193,63 @@ export const CERTIFICATIONS = [
     file: null
   }
 ];
+
+// --- ARABIC TRANSLATIONS ---
+
+export const PERSONAL_INFO_AR = {
+  name: "عمر الحموي",
+  title: "مهندس برمجيات متكامل (Full-Stack)",
+  email: "omar.alhamawi@outlook.com",
+  tagline: "مهندس برمجيات معتمد من Oracle متخصص في بناء هياكل Spring Boot القابلة للتوسع وواجهات React. شغوف بتقديم حلول مؤسسية آمنة وعالية الأداء مع الالتزام بأعلى معايير جودة الكود.",
+  // Social links stay the same
+  social: PERSONAL_INFO.social, 
+};
+
+// We don't translate SKILLS because translating "React" or "PostgreSQL" doesn't make sense.
+export const SKILLS_AR = SKILLS;
+
+export const EXPERIENCE_AR = [
+  {
+    company: "Quality Professionals - QPROS",
+    role: "مهندس ضبط الجودة (Quality Control Engineer)",
+    period: "أكتوبر 2025 - الحاضر",
+    description: "قيادة استراتيجية فحص الجودة لنظام مؤسسي ضخم وعالي التنظيم.",
+    highlights: [
+      "تصميم حالات اختبار شاملة وخطوات تنفيذ مفصلة، لتكون بمثابة الأساس لفريق الأتمتة (QA automation).",
+      "إدارة دورة حياة العيوب باستخدام Jira، وتيسير جلسات الفرز الفني مع المطورين لتوحيد منهجيات الاختبار وتسريع حل المشكلات.",
+      "إجراء جلسات تحليل متعمقة للمتطلبات، والتعاون المباشر مع العملاء وأصحاب المصلحة لتوضيح منطق العمل المعقد وتغطية الحالات الاستثنائية.",
+      "تنفيذ اختبارات يدوية واستكشافية دقيقة عبر نظام واسع النطاق لضمان الامتثال التام لمتطلبات العمل."
+    ]
+  },
+  {
+    company: "Network International",
+    role: "متدرب هندسة برمجيات",
+    period: "يوليو 2024 - مارس 2025",
+    description: "تصميم وتطوير نظام إدارة مستخدمين آمن ومتكامل للعمليات المالية التقنية (Fintech).",
+    highlights: [
+      "تطوير بنية النظام المتكاملة مع مصادقة JWT آمنة، ونظام التحكم في الوصول المبني على الأدوار (RBAC).",
+      "بناء وتحسين الخدمات الخلفية (Backend) باستخدام Java 17 و Spring Boot 3 و PostgreSQL لضمان قابلية التوسع والصيانة.",
+      "تبسيط دورات النشر من خلال تنفيذ خطوط أنابيب CI/CD المؤتمتة باستخدام Jenkins وحوسبة التطبيقات عبر Docker.",
+      "رفع جودة الكود وموثوقية النظام من خلال إجراء اختبارات الوحدة والتكامل باستخدام JUnit، واختبارات E2E باستخدام Cypress.",
+      "التعاون ضمن بيئة عمل Agile سريعة، والمشاركة الفعالة في تخطيط السبرينت، والاجتماعات اليومية، والمراجعة النظيرة للكود."
+    ]
+  }
+];
+
+export const PROJECTS_AR = [
+  {
+    title: "ScholarMatchJo",
+    tech: PROJECTS[0].tech, // Keep English tech stack
+    description: "منصة ويب شاملة مصممة لربط الطلاب الأردنيين بفرص المنح الدراسية المستهدفة. تتميز بخوارزميات بحث ومطابقة متقدمة مع لوحة تحكم مستخدم سريعة الاستجابة.",
+    links: PROJECTS[0].links 
+  },
+  {
+    title: "User Management System",
+    tech: PROJECTS[1].tech, // Keep English tech stack
+    description: "تطبيق داخلي على مستوى المؤسسة تم تطويره خلال فترة تدريبي في Network International. مصمم بمصادقة JWT قوية، ونظام تحكم في الوصول مبني على الأدوار (RBAC)، وخطوط أنابيب CI/CD للنشر السلس.",
+    links: PROJECTS[1].links
+  }
+];
+
+// We keep certifications in English so recruiters can verify the exact official names.
+export const CERTIFICATIONS_AR = CERTIFICATIONS;
