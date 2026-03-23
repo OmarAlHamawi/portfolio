@@ -7,7 +7,7 @@ const Certifications = () => {
   const { lang } = useLanguage();
 
   return (
-    <section className="py-16 md:py-24 bg-dark-900" id="certifications">
+    <section className="py-16 md:py-24 bg-dark-800" id="certifications">
       <div className="max-w-6xl mx-auto px-6">
         
         <motion.h3 
@@ -17,7 +17,7 @@ const Certifications = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl font-bold text-white mb-16"
         >
-          <span className="text-gold-500">04.</span> {lang === 'EN' ? "Certifications" : "الشهادات"}
+          <span className="text-gold-500">05.</span> {lang === 'EN' ? "Certifications" : "الشهادات"}
         </motion.h3>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

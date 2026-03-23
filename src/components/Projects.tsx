@@ -8,7 +8,7 @@ const Projects = () => {
   const projectsData = lang === 'EN' ? PROJECTS : PROJECTS_AR;
 
   return (
-    <section className="py-16 md:py-24 bg-dark-800" id="projects">
+    <section className="py-16 md:py-24 bg-dark-900" id="projects">
       <div className="max-w-6xl mx-auto px-6">
         
         <motion.h3 
@@ -18,7 +18,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl font-bold text-white mb-16"
         >
-          <span className="text-gold-500">03.</span> {lang === 'EN' ? "Featured Projects" : "أبرز المشاريع"}
+          <span className="text-gold-500">04.</span> {lang === 'EN' ? "Featured Projects" : "أبرز المشاريع"}
         </motion.h3>
 
         <div className="grid md:grid-cols-2 gap-8">

@@ -11,6 +11,7 @@ const NavBar = () => {
     { id: 'about', en: 'About', ar: 'نبذة' },
     { id: 'skills', en: 'Skills', ar: 'المهارات' },
     { id: 'experience', en: 'Experience', ar: 'الخبرات' },
+    { id: 'education', en: 'Education', ar: 'التعليم' },
     { id: 'projects', en: 'Projects', ar: 'المشاريع' },
     { id: 'certifications', en: 'Certifications', ar: 'الشهادات' }
   ];
