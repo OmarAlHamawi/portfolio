@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
 import { LanguageProvider } from './context/LanguageContext';
-
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   return (
     <LanguageProvider>  
@@ -18,6 +18,7 @@ function App() {
         <Education />
         <Projects />
         <Certifications />
+        <Analytics />
       </div>
     </LanguageProvider> 
   );
