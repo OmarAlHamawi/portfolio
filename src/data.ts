@@ -66,7 +66,7 @@ export const PROJECTS = [
     title: "User Management System",
     tech: ["Java 17", "Spring Boot 3", "React", "PostgreSQL", "JWT", "Docker", "Jenkins"],
     description: "An enterprise-grade internal application developed at Network International as an intern project. Architected with robust JWT authentication, strict role-based access control (RBAC), and automated CI/CD pipelines for seamless deployment.",
-    links: { github: "https://github.com/OmarAlHamawi/UsermanagementApp", demo: "#" }
+    links: { github: "https://github.com/OmarAlHamawi/UsermanagementApp", demo: "https://user-management-app-frontend-sand.vercel.app/" }
   }
 ];
 export const CERTIFICATIONS = [
@@ -102,7 +102,6 @@ export const CERTIFICATIONS = [
     link: "https://ude.my/UC-91bd1de1-cef5-4222-8308-fec70adb278c",
     file: null
   },
-  /*coursera certifications*/
   {
     name: "Google Advanced Data Analytics",
     issuer: "Coursera",
@@ -194,18 +193,15 @@ export const CERTIFICATIONS = [
   }
 ];
 
-// --- ARABIC TRANSLATIONS ---
 
 export const PERSONAL_INFO_AR = {
   name: "عمر الحموي",
   title: "مهندس برمجيات متكامل (Full-Stack)",
   email: "omar.alhamawi@outlook.com",
   tagline: "مهندس برمجيات معتمد من Oracle متخصص في بناء هياكل Spring Boot القابلة للتوسع وواجهات React. شغوف بتقديم حلول مؤسسية آمنة وعالية الأداء مع الالتزام بأعلى معايير جودة الكود.",
-  // Social links stay the same
   social: PERSONAL_INFO.social, 
 };
 
-// We don't translate SKILLS because translating "React" or "PostgreSQL" doesn't make sense.
 export const SKILLS_AR = SKILLS;
 
 export const EXPERIENCE_AR = [
@@ -239,17 +235,49 @@ export const EXPERIENCE_AR = [
 export const PROJECTS_AR = [
   {
     title: "ScholarMatchJo",
-    tech: PROJECTS[0].tech, // Keep English tech stack
+    tech: PROJECTS[0].tech, 
     description: "منصة ويب شاملة مصممة لربط الطلاب الأردنيين بفرص المنح الدراسية المستهدفة. تتميز بخوارزميات بحث ومطابقة متقدمة مع لوحة تحكم مستخدم سريعة الاستجابة.",
-    links: PROJECTS[0].links 
-  },
+    links: { github: "https://github.com/OmarAlHamawi/Scholar-Match-jo", demo: "#" }  },
   {
     title: "User Management System",
-    tech: PROJECTS[1].tech, // Keep English tech stack
+    tech: PROJECTS[1].tech, 
     description: "تطبيق داخلي على مستوى المؤسسة تم تطويره خلال فترة تدريبي في Network International. مصمم بمصادقة JWT قوية، ونظام تحكم في الوصول مبني على الأدوار (RBAC)، وخطوط أنابيب CI/CD للنشر السلس.",
-    links: PROJECTS[1].links
+    links: { github: "https://github.com/OmarAlHamawi/UsermanagementApp", demo: "https://user-management-app-frontend-sand.vercel.app/" }
   }
 ];
 
-// We keep certifications in English so recruiters can verify the exact official names.
 export const CERTIFICATIONS_AR = CERTIFICATIONS;
+
+export const EDUCATION = [
+  {
+    degree: "Bachelor's Degree in Computer Science",
+    institution: "Al Hussein Technical University (HTU)",
+    period: "Spring 2021 - 2025",
+    description: "Completed an 3.5-year academic program focusing on computer science fundamentals, complex algorithms, and scalable software architecture.",
+    file: "/htu-bachelor-certificate.pdf" 
+  },
+  {
+    degree: "Pearson BTEC Higher National Diploma (HND)",
+    institution: "Al Hussein Technical University (HTU)",
+    period: "Spring 2021 - 2025",
+    description: "Earned concurrently with the Bachelor's degree. This globally recognized UK certification emphasizes rigorous, hands-on technical skills and practical enterprise software development.",
+    file: "/pearson-btec-certificate.pdf" 
+  }
+];
+
+export const EDUCATION_AR = [
+  {
+    degree: "درجة البكالوريوس في علم الحاسوب",
+    institution: "جامعة الحسين التقنية (HTU)",
+    period: "ربيع 2021 - 2025",
+    description: "إتمام برنامج أكاديمي لمدة 3.5 سنوات يركز على أساسيات علم الحاسوب، الخوارزميات المعقدة، وهيكلية البرمجيات القابلة للتوسع.",
+    file: "/htu-bachelor-certificate.pdf"
+  },
+  {
+    degree: "الدبلوم الوطني العالي من بيرسون (Pearson BTEC HND)",
+    institution: "جامعة الحسين التقنية (HTU)",
+    period: "ربيع 2021 - 2025",
+    description: "تم الحصول عليه بالتزامن مع درجة البكالوريوس. تركز هذه الشهادة البريطانية المعترف بها عالمياً على المهارات التقنية العملية الصارمة وتطوير برمجيات المؤسسات.",
+    file: "/pearson-btec-certificate.pdf"
+  }
+];
