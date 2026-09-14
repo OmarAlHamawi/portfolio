@@ -4,4 +4,8 @@ import tailwindcss from '@tailwindcss/vite' // Add this
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [tailwindcss(),react()],
+  build: {
+    target: 'es2020',
+    chunkSizeWarningLimit: 1000,
+  },
 })

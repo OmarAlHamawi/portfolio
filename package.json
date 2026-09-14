@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.2.1",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.34.3",
@@ -37,9 +36,8 @@
     "typescript-eslint": "^8.48.0",
     "vite": "^7.3.1"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
-  "keywords": [],
-  "author": "",
+  "description": "Portfolio website for Omar Al-Hamawi, Full-Stack Software Engineer specializing in Spring Boot and React.",
+  "keywords": ["portfolio", "react", "vite", "typescript", "tailwindcss", "spring-boot", "java"],
+  "author": "Omar Al-Hamawi <omar.alhamawi@outlook.com>",
   "license": "ISC"
 }
