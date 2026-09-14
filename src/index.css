@@ -15,6 +15,10 @@
 }
 
 /* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-dark-900);
   color: #d1d5db; /* gray-300 */
@@ -34,4 +38,17 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
+}
+
+/* Accessible keyboard focus */
+:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

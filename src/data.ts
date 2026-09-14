@@ -1,9 +1,68 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, type LucideIcon } from "lucide-react";
 
-export const PERSONAL_INFO = {
+export interface SocialLink {
+  label: string;
+  href: string;
+  icon: LucideIcon;
+}
+
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  email: string;
+  phone: string;
+  phoneDisplay: string;
+  whatsapp: string;
+  cvPath: string;
+  tagline: string;
+  social: SocialLink[];
+}
+
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  highlights: string[];
+}
+
+export interface ProjectLinks {
+  github: string;
+  demo: string;
+}
+
+export interface ProjectItem {
+  title: string;
+  tech: string[];
+  description: string;
+  links: ProjectLinks;
+}
+
+export interface CertificationItem {
+  name: string;
+  issuer: string;
+  date: string;
+  credentialId: string;
+  link: string | null;
+  file: string | null;
+}
+
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  description: string;
+  file: string;
+}
+
+export const PERSONAL_INFO: PersonalInfo = {
   name: "Omar Al-Hamawi",
   title: "Full-Stack Software Engineer",
   email: "omar.alhamawi@outlook.com",
+  phone: "+962799875468",
+  phoneDisplay: "+962 79 987 5468",
+  whatsapp: "https://wa.me/962799875468",
+  cvPath: "/cv.pdf",
   tagline: "Oracle Certified Software Engineer specializing in scalable Spring Boot architectures and React interfaces. Passionate about delivering secure, high-performance enterprise solutions with uncompromising code quality.",
   social: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/omar-al-hamawi-68556629a/", icon: Linkedin },
@@ -12,7 +71,7 @@ export const PERSONAL_INFO = {
   ],
 };
 
-export const SKILLS = [
+export const SKILLS: string[] = [
   // Core Languages & Frameworks
   "Java (17/21)", "Spring Boot 3", "React.js", "TypeScript", 
   "C#", "ASP.NET Core", "JavaScript", "Node.js",
@@ -27,7 +86,7 @@ export const SKILLS = [
   "Tricentis Tosca", "JUnit & Cypress", "Git & GitHub", "Postman"
 ];
 
-export const EXPERIENCE = [
+export const EXPERIENCE: ExperienceItem[] = [
   {
     company: "Quality Professionals - QPROS",
     role: "Quality Control Engineer",
@@ -55,7 +114,7 @@ export const EXPERIENCE = [
   }
 ];
 
-export const PROJECTS = [
+export const PROJECTS: ProjectItem[] = [
   {
     title: "ScholarMatchJo",
     tech: ["Java 17", "Spring Boot", "Python", "FastAPI", "React", "PostgreSQL", "GitHub", "Figma"],
@@ -69,7 +128,7 @@ export const PROJECTS = [
     links: { github: "https://github.com/OmarAlHamawi/UsermanagementApp", demo: "https://user-management-app-frontend-sand.vercel.app/" }
   }
 ];
-export const CERTIFICATIONS = [
+export const CERTIFICATIONS: CertificationItem[] = [
   {
     name: "Oracle Certified Professional: Java SE 17 Developer",
     issuer: "Oracle University",
@@ -194,17 +253,21 @@ export const CERTIFICATIONS = [
 ];
 
 
-export const PERSONAL_INFO_AR = {
+export const PERSONAL_INFO_AR: PersonalInfo = {
   name: "عمر الحموي",
   title: "مهندس برمجيات متكامل (Full-Stack)",
   email: "omar.alhamawi@outlook.com",
+  phone: PERSONAL_INFO.phone,
+  phoneDisplay: PERSONAL_INFO.phoneDisplay,
+  whatsapp: PERSONAL_INFO.whatsapp,
+  cvPath: PERSONAL_INFO.cvPath,
   tagline: "مهندس برمجيات معتمد من Oracle متخصص في بناء هياكل Spring Boot القابلة للتوسع وواجهات React. شغوف بتقديم حلول مؤسسية آمنة وعالية الأداء مع الالتزام بأعلى معايير جودة الكود.",
   social: PERSONAL_INFO.social, 
 };
 
-export const SKILLS_AR = SKILLS;
+export const SKILLS_AR: string[] = SKILLS;
 
-export const EXPERIENCE_AR = [
+export const EXPERIENCE_AR: ExperienceItem[] = [
   {
     company: "Quality Professionals - QPROS",
     role: "مهندس ضبط الجودة (Quality Control Engineer)",
@@ -232,7 +295,7 @@ export const EXPERIENCE_AR = [
   }
 ];
 
-export const PROJECTS_AR = [
+export const PROJECTS_AR: ProjectItem[] = [
   {
     title: "ScholarMatchJo",
     tech: PROJECTS[0].tech, 
@@ -246,9 +309,9 @@ export const PROJECTS_AR = [
   }
 ];
 
-export const CERTIFICATIONS_AR = CERTIFICATIONS;
+export const CERTIFICATIONS_AR: CertificationItem[] = CERTIFICATIONS;
 
-export const EDUCATION = [
+export const EDUCATION: EducationItem[] = [
   {
     degree: "Bachelor's Degree in Computer Science",
     institution: "Al Hussein Technical University (HTU)",
@@ -265,7 +328,7 @@ export const EDUCATION = [
   }
 ];
 
-export const EDUCATION_AR = [
+export const EDUCATION_AR: EducationItem[] = [
   {
     degree: "درجة البكالوريوس في علم الحاسوب",
     institution: "جامعة الحسين التقنية (HTU)",
