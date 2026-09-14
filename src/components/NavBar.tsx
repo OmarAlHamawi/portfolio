@@ -19,7 +19,7 @@ const NavBar = () => {
   return (
     <nav className="fixed top-0 w-full bg-dark-900/90 backdrop-blur-md z-50 border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between relative z-50">
-        <span className="text-xl font-bold text-white">OmarAlHamawi<span className="text-gold-500">.dev</span></span>
+        <Link to="about" smooth={true} offset={-80} className="text-xl font-bold text-white cursor-pointer">OmarAlHamawi<span className="text-gold-500">.dev</span></Link>
         
         {/* CHANGED: Replaced space-x with gap-8 for flawless RTL spacing */}
         <div className="hidden md:flex items-center gap-8">
@@ -52,7 +52,7 @@ const NavBar = () => {
             {/* CHANGED: Now says العربية instead of AR on mobile */}
             {lang === 'EN' ? 'العربية' : 'EN'}
           </button>
-          <button className="text-gray-400 hover:text-white" onClick={() => setIsOpen(!isOpen)}>
+          <button className="text-gray-400 hover:text-white" onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen} aria-controls="mobile-menu" aria-label={lang === 'EN' ? (isOpen ? 'Close menu' : 'Open menu') : (isOpen ? 'إغلاق القائمة' : 'فتح القائمة')}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -61,7 +61,7 @@ const NavBar = () => {
       {isOpen && (
         <>
           <div className="fixed left-0 top-16 w-full h-[100vh] bg-black/60 backdrop-blur-sm md:hidden z-40 cursor-pointer" onClick={() => setIsOpen(false)}></div>
-          <div className="md:hidden bg-dark-800 border-b border-white/10 shadow-2xl absolute w-full z-50">
+          <div id="mobile-menu" className="md:hidden bg-dark-800 border-b border-white/10 shadow-2xl absolute w-full z-50">
             <div className="px-6 py-4 flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link 

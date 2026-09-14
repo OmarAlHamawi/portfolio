@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Mail, Phone, X } from 'lucide-react';
 // 1. Import both English and Arabic data
@@ -29,6 +29,21 @@ const Hero = () => {
   // 4. Automatically switch the data source based on language!
   const info = lang === 'EN' ? PERSONAL_INFO : PERSONAL_INFO_AR;
 
+  // Escape to close + scroll lock for the contact modal
+  useEffect(() => {
+    if (!isContactOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setContactOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isContactOpen]);
+
   return (
     <section className="min-h-screen flex items-center justify-center pt-24 md:pt-16 relative" id="about">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -43,7 +58,7 @@ const Hero = () => {
             {lang === 'EN' ? "Hello, I'm" : "مرحباً، أنا"}
           </motion.p>
           
-          <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 whitespace-nowrap tracking-tight">
+          <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
             {info.name} {/* This automatically uses info! */}
           </motion.h1>
           
@@ -74,7 +89,7 @@ const Hero = () => {
 
           <motion.div variants={fadeInUp} className="mt-8 md:mt-12 flex gap-6 justify-center md:justify-start text-gray-400">
             {info.social.map((social, idx) => (
-              <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="hover:text-white transition-colors">
                 <social.icon size={24} />
               </a>
             ))}
@@ -91,7 +106,7 @@ const Hero = () => {
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 mx-auto">
             <div className="absolute inset-0 rounded-full border-2 border-gold-500 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4"></div>
             <div className="absolute inset-0 rounded-full overflow-hidden bg-dark-800 border-4 border-dark-900">
-              <img src="/profile.jpg" alt={info.name} className="w-full h-full object-cover" />
+              <img src="/profile.jpg" alt={info.name} fetchPriority="high" width={384} height={384} className="w-full h-full object-cover" />
             </div>
           </div>
         </motion.div>
@@ -111,10 +126,13 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }} 
               animate={{ opacity: 1, scale: 1, y: 0 }} 
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              role="dialog"
+              aria-modal="true"
+              aria-label={lang === 'EN' ? "Get in Touch" : "تواصل معي"}
               className="bg-dark-800 border border-gold-500/30 p-6 md:p-8 rounded-xl w-full max-w-md relative z-10 shadow-2xl max-h-[90vh] overflow-y-auto"
               dir={lang === 'AR' ? 'rtl' : 'ltr'} // Ensure the modal respects text direction
             >
-              <button onClick={() => setContactOpen(false)} className={`absolute top-4 ${lang === 'AR' ? 'left-4' : 'right-4'} text-gray-500 hover:text-white`}>
+              <button onClick={() => setContactOpen(false)} aria-label={lang === 'EN' ? "Close contact dialog" : "إغلاق نافذة التواصل"} className={`absolute top-4 ${lang === 'AR' ? 'left-4' : 'right-4'} text-gray-500 hover:text-white`}>
                 <X size={24} />
               </button>
               
