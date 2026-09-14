@@ -51,7 +51,8 @@ const Education = () => {
                     // Standardized styling for minimalist top-corner icons on this site
                     className="text-gray-400 hover:text-gold-500 transition-colors"
                     // Adding title for accessibility since visible text is removed
-                    title={lang === 'EN' ? "Download Certificate" : "تحميل الشهادة"} 
+                    title={lang === 'EN' ? "Download Certificate" : "تحميل الشهادة"}
+                    aria-label={lang === 'EN' ? `Download certificate for ${edu.degree}` : `تحميل شهادة ${edu.degree}`}
                   >
                     <Download size={20} /> {/* Adjusted icon size */}
                   </a>

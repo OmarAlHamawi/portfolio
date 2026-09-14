@@ -41,7 +41,7 @@ const Skills = () => {
               {lang === 'EN' ? "VERIFIED" : "موثق"}
             </div>
             
-            <img src="/oracle-badge.png" alt="Oracle Certified" className="w-32 h-32 mx-auto mb-6 drop-shadow-xl relative z-10" />
+            <img src="/oracle-badge.png" alt="Oracle Certified Professional Java SE 17 Developer badge" loading="lazy" decoding="async" width={128} height={128} className="w-32 h-32 mx-auto mb-6 drop-shadow-xl relative z-10" />
             <h4 className="text-white font-bold text-lg relative z-10">{lang === 'EN' ? "Oracle Certified Professional" : "مطور أوراكل المعتمد"}</h4>
             <p className="text-gold-500 text-sm mb-4 relative z-10">{lang === 'EN' ? "Java SE 17 Developer" : "مطور جافا 17"}</p>
             <p className="text-gray-500 text-xs relative z-10">

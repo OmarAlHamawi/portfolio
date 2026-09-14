@@ -41,13 +41,13 @@ const Certifications = () => {
                 
                 <div className="flex gap-3">
                   {cert.file && (
-                    <a href={cert.file} download className="text-gray-400 hover:text-gold-500 transition-colors" title={lang === 'EN' ? "Download Certificate" : "تحميل الشهادة"}>
+                    <a href={cert.file} download className="text-gray-400 hover:text-gold-500 transition-colors" title={lang === 'EN' ? "Download Certificate" : "تحميل الشهادة"} aria-label={lang === 'EN' ? `Download certificate for ${cert.name}` : `تحميل شهادة ${cert.name}`}>
                       <Download size={20} />
                     </a>
                   )}
                   
                   {cert.link && (
-                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors" title={lang === 'EN' ? "View Certificate" : "عرض الشهادة"}>
+                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors" title={lang === 'EN' ? "View Certificate" : "عرض الشهادة"} aria-label={lang === 'EN' ? `View credential for ${cert.name}` : `عرض اعتماد ${cert.name}`}>
                       <ExternalLink size={20} />
                     </a>
                   )}

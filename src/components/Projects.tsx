@@ -37,8 +37,10 @@ const Projects = () => {
                   <FileText className="text-gold-500" size={24} />
                 </div>
                 <div className="flex gap-4 text-gray-400">
-                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="hover:text-gold-500"><Github size={20} /></a>
-                  <a href={project.links.demo} className="hover:text-gold-500"><ExternalLink size={20} /></a>
+                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="hover:text-gold-500" aria-label={`View ${project.title} source code on GitHub`}><Github size={20} /></a>
+                  {project.links.demo && project.links.demo !== "#" && (
+                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="hover:text-gold-500" aria-label={`View ${project.title} live demo`}><ExternalLink size={20} /></a>
+                  )}
                 </div>
               </div>
               
